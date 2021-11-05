@@ -1,0 +1,12 @@
+extends layout 
+
+block content 
+  h1 #{title}
+
+  p Do you really want to delete this CPU?  
+
+  p #{cpuinstance.cpu.name}: #{cpuinstance.serial}
+
+  form(method='POST' action='')
+    input#cpuinstanceid(type='hidden', name='cpuinstanceid', required='true', value=cpuinstance._id)
+    button(type='submit') Delete

@@ -1,0 +1,17 @@
+extends layout 
+
+block content 
+  h1= title 
+
+  h1 CPU: #{cpu.name}
+
+  ul 
+    li Manufacturer: #{cpu.manufacturer}
+    li Model: #{cpu.model}
+    li Price: $#{cpu.price}
+
+  hr
+  p
+    a(href=cpu.url+'/update') Update CPU
+  p
+    a(href=cpu.url+'/delete') Delete CPU

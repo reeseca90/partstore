@@ -1,0 +1,18 @@
+extends layout 
+
+block content 
+  h1= title 
+
+  h1 GPU: #{gpu.name}
+
+  ul 
+    li Manufacturer: #{gpu.manufacturer}
+    li Chipset: #{gpu.chipset}
+    li Model: #{gpu.model}
+    li Price: $#{gpu.price}
+
+  hr
+  p
+    a(href=gpu.url+'/update') Update GPU
+  p
+    a(href=gpu.url+'/delete') Delete GPU

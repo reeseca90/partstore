@@ -1,0 +1,13 @@
+extends layout 
+
+block content 
+
+  h1= title 
+
+  ul 
+    each cpuinstance in cpuinstancelist 
+      li #{cpuinstance.cpu.name}:  
+        a(href=cpuinstance.url) #{cpuinstance.serial}
+
+    else
+      li No CPUs in stock.

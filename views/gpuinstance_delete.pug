@@ -1,0 +1,12 @@
+extends layout 
+
+block content 
+  h1 #{title}
+
+  p Do you really want to delete this GPU?  
+
+  p #{gpuinstance.gpu.name}: #{gpuinstance.serial}
+
+  form(method='POST' action='')
+    input#gpuinstanceid(type='hidden', name='gpuinstanceid', required='true', value=gpuinstance._id)
+    button(type='submit') Delete

@@ -1,7 +1,35 @@
 doctype html
-html
+html(lang='en')
   head
     title= title
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
-    block content
+    div.mainpage
+      div.sidebar-nav
+        block sidebar
+          ul
+            li
+              a(href='/inv') Home
+            li
+              a(href='/inv/cpus') All CPUs
+            li
+              a(href='/inv/gpus') All GPUs
+            li
+              a(href='/inv/cpuinstances') All CPUs in stock
+            li
+              a(href='/inv/gpuinstances') All GPUs in stock
+            li
+              hr
+            li
+              a(href='/inv/cpu/create') Create new CPU
+            li
+              a(href='/inv/gpu/create') Create new GPU
+            li
+              a(href='/inv/cpuinstance/create') Add new CPU stock
+            li
+              a(href='/inv/gpuinstance/create') Add new GPU stock
+
+      div.contentarea
+        block content

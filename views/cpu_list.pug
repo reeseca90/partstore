@@ -1,0 +1,12 @@
+extends layout 
+
+block content 
+  h1= title 
+
+  ul
+    each cpu in cpulist
+      li
+        a(href=cpu.url) #{cpu.name}
+        
+    else
+      li No CPUs found.

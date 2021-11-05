@@ -1,0 +1,18 @@
+extends layout 
+
+block content 
+  h1= title 
+
+  h1 CPU: #{cpuinstance.cpu.name}
+
+  ul 
+    li Manufacturer: #{cpuinstance.cpu.manufacturer}
+    li Model: #{cpuinstance.cpu.model}
+    li Price: $#{cpuinstance.cpu.price}
+    li Serial: #{cpuinstance.serial}
+
+  hr
+  p
+    a(href=cpuinstance.url+'/update') Update CPU Stock Detail
+  p
+    a(href=cpuinstance.url+'/delete') Delete CPU Stock Detail

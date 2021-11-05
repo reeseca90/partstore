@@ -1,5 +1,16 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  section
+    h1= title
+    
+    h1 Store inventory: 
+
+    if error
+      p Error getting inventory 
+    else
+      ul 
+        li CPU count: !{data.cpu_count}
+        li GPU count: !{data.gpu_count}
+        li CPUs in stock: !{data.cpuinstance_count}
+        li GPUs in stock: !{data.gpuinstance_count}

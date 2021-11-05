@@ -1,0 +1,18 @@
+extends layout 
+
+block content 
+  h1 #{title}: #{gpu.name}
+
+  if gpuinstances.length  
+    p #[strong Delete the following GPU instances before deleting the CPU:]
+
+    ul
+      each gpu in gpuinstances
+        li #{gpu.serial}
+
+  else
+    p Do you really want to delete this GPU?  
+
+    form(method='POST' action='')
+      input#gpuid(type='hidden', name='gpuid', required='true', value=gpu._id)
+      button(type='submit') Delete

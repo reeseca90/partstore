@@ -1,0 +1,12 @@
+extends layout 
+
+block content 
+  h1= title 
+
+  ul
+    each gpu in gpulist
+      li
+        a(href=gpu.url) #{gpu.name}
+        
+    else
+      li No GPUs found.

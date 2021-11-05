@@ -1,0 +1,18 @@
+extends layout 
+
+block content 
+  h1= title 
+
+  h1 GPU: #{gpuinstance.gpu.name}
+
+  ul 
+    li Manufacturer: #{gpuinstance.gpu.manufacturer}
+    li Model: #{gpuinstance.gpu.model}
+    li Price: $#{gpuinstance.gpu.price}
+    li Serial: #{gpuinstance.serial}
+
+  hr
+  p
+    a(href=gpuinstance.url+'/update') Update GPU Stock Detail
+  p
+    a(href=gpuinstance.url+'/delete') Delete GPU Stock Detail

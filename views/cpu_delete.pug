@@ -1,0 +1,18 @@
+extends layout 
+
+block content 
+  h1 #{title}: #{cpu.name}
+
+  if cpuinstances.length  
+    p #[strong Delete the following CPU instances before deleting the CPU:]
+
+    ul
+      each cpu in cpuinstances
+        li #{cpu.serial}
+
+  else
+    p Do you really want to delete this CPU?  
+
+    form(method='POST' action='')
+      input#cpuid(type='hidden', name='cpuid', required='true', value=cpu._id)
+      button(type='submit') Delete
